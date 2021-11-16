@@ -51,7 +51,7 @@ module.exports = {
     'no-trailing-spaces': ['error'],
     'eol-last': ['error'],
 
-    'no-console': ['error', { allow: ['warn', 'error', 'info'] }], // варны и эрроры и инфо - ок
+    'no-console': ['off'],// варны и эрроры и инфо - ок
 
     'no-debugger': ['error'],
     'no-unused-vars': ['warn', { args: 'none' }], // просто переменные - error, аргументы в методе - норм.
