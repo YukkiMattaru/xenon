@@ -24,6 +24,8 @@ const Header = () => {
 const StyledHeader = styled.header`
   width: 90%;
   margin: 0 auto;
+  height: 100px;
+  border-bottom: 1px solid red;
   align-items: center;
   display: flex;
   justify-content: space-between;
@@ -31,7 +33,6 @@ const StyledHeader = styled.header`
 
 const StyledSearchContainer = styled.div`
   display: flex;
-  align-items: center;
   column-gap: 1em;
   width: 30%;
   
