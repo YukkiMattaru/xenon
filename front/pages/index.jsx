@@ -1,30 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import ProductCard from '../components/ProductCard';
+import axios from 'axios';
 
 const Home = () => {
+  const [products, setProducts] = useState();
+
+  useEffect(() => {
+      axios.get('https://localhost:5001/products/search')
+        .then(res => {
+          setProducts(res.data);
+        });
+  }, []);
+
+  console.log(products);
+
   return (
     <StyledContainer>
       <SearchResult>Контейнер для того шобы написать что пошел нахуй или я нашел твой товар или популярные товары</SearchResult>
       <StyledMainContent>
         <FilterSidebar>Сайдбар с фильтрациями когда-нибудь</FilterSidebar>
-        <ProductCards>
-          <ProductCard link="https://images.wbstatic.net/c516x688/new/18700000/18701273-1.jpg" name="Чайник заварочный стеклянный" cost="533Р" />
-          <ProductCard link="https://images.wbstatic.net/c516x688/new/14550000/14551233-1.jpg" name="Стеклянный заварочный чайник с кнопкой" cost="1483Р/(зачеркнуто)2000P" />
-          <ProductCard link="https://images.wbstatic.net/c516x688/new/7280000/7285402-1.jpg" name="Чайник заварочный стекло" cost="732Р" />
-          <ProductCard link="https://images.wbstatic.net/c516x688/new/18700000/18701273-1.jpg" name="Чайник заварочный стеклянный" cost="533Р" />
-          <ProductCard link="https://images.wbstatic.net/c516x688/new/14550000/14551233-1.jpg" name="Стеклянный заварочный чайник с кнопкой" cost="1483Р/(зачеркнуто)2000P" />
-          <ProductCard link="https://images.wbstatic.net/c516x688/new/7280000/7285402-1.jpg" name="Чайник заварочный стекло" cost="732Р" />
-          <ProductCard link="https://images.wbstatic.net/c516x688/new/18700000/18701273-1.jpg" name="Чайник заварочный стеклянный" cost="533Р" />
-          <ProductCard link="https://images.wbstatic.net/c516x688/new/14550000/14551233-1.jpg" name="Стеклянный заварочный чайник с кнопкой" cost="1483Р/(зачеркнуто)2000P" />
-          <ProductCard link="https://images.wbstatic.net/c516x688/new/7280000/7285402-1.jpg" name="Чайник заварочный стекло" cost="732Р" />
-          <ProductCard link="https://images.wbstatic.net/c516x688/new/18700000/18701273-1.jpg" name="Чайник заварочный стеклянный" cost="533Р" />
-          <ProductCard link="https://images.wbstatic.net/c516x688/new/14550000/14551233-1.jpg" name="Стеклянный заварочный чайник с кнопкой" cost="1483Р/(зачеркнуто)2000P" />
-          <ProductCard link="https://images.wbstatic.net/c516x688/new/7280000/7285402-1.jpg" name="Чайник заварочный стекло" cost="732Р" />
-          <ProductCard link="https://images.wbstatic.net/c516x688/new/18700000/18701273-1.jpg" name="Чайник заварочный стеклянный" cost="533Р" />
-          <ProductCard link="https://images.wbstatic.net/c516x688/new/14550000/14551233-1.jpg" name="Стеклянный заварочный чайник с кнопкой" cost="1483Р/(зачеркнуто)2000P" />
-          <ProductCard link="https://images.wbstatic.net/c516x688/new/7280000/7285402-1.jpg" name="Чайник заварочный стекло" cost="732Р" />
-        </ProductCards>
+          {
+            products ? (
+              <ProductCards>
+                {products.map(product => (
+                  <ProductCard id={product.id} key={product.id} link={product.images[0].filePath} name={product.name} cost={product.price} />
+                ))}
+              </ProductCards>
+            ) : (
+              <>Loading...</>
+            )
+          }
       </StyledMainContent>
     </StyledContainer>
   );
