@@ -1,8 +1,10 @@
 import React from 'react';
+import Header from '../components/Header';
 
-const DefaultLayout = () => {
+const DefaultLayout = (props) => {
   return <div>
-    hello
+    <Header />
+    {props.children}
   </div>;
 };
 
