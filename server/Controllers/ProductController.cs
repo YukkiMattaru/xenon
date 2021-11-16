@@ -30,6 +30,16 @@ namespace server.Controllers
 
             return Json(products.ToList());
         }
+        
+        [HttpGet("/product/{id:int}")]
+        public JsonResult GetProduct(int id)
+        {
+            var product = _db.Products
+                .Include(p=> p.Images)
+                .FirstOrDefault( product => product.Id == id);
+
+            return Json(product);
+        }
 
         [HttpPost("initialize")]
         public IActionResult InitializeProducts()
