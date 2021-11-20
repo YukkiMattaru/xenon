@@ -17,9 +17,9 @@ const Home = () => {
 
   return (
     <StyledContainer>
-      <SearchResult>Контейнер для того шобы написать что пошел нахуй или я нашел твой товар или популярные товары</SearchResult>
+      <SearchResult>Результат поиска</SearchResult>
       <StyledMainContent>
-        <FilterSidebar>Сайдбар с фильтрациями когда-нибудь</FilterSidebar>
+        <FilterSidebar>Сайдбар с фильтрациями</FilterSidebar>
           {
             products ? (
               <ProductCards>

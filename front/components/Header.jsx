@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <StyledHeader>
       <div>
-        <h1>XENON</h1>
+        <h1><a href="/">XENON</a></h1>
       </div>
       <StyledSearchContainer>
         <label htmlFor="search">Поиск</label>

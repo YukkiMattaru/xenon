@@ -6,7 +6,7 @@ const ProductCard = (props) => {
     <ProductCardContainer>
       <img src={props.link} alt={props.name} />
       <div>
-        <a href={`product?${props.id}`}>{props.name}</a>
+        <a href={`product/${props.id}`}>{props.name}</a>
         <p>{props.cost}</p>
       </div>
       <button onClick={() => alert(`${props.name} добавлен в корзину`)}>В корзину</button>

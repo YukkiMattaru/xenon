@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useRouter } from 'next/router';
+import ProductCard from '../../components/ProductCard';
 
 const Product = (props) => {
-
+  const router = useRouter();
   const [productInfo, setProductInfo] = useState();
   useEffect(() => {
-    axios.get(`https://localhost:5001/product/${props.id}`)
-      .then(res => setProductInfo(res.data));
-  });
-
-  console.log(productInfo);
+    if (router.query.id) {
+      axios.get(`https://localhost:5001/product/${router.query.id}`)
+        .then(res => setProductInfo(res.data));
+    }
+  }, [router.query.id]);
 
   return (
     <div>
-      Hello
+      {productInfo && (
+      <ProductCard name={productInfo.name} cost={productInfo.price} link={productInfo.images[0].filePath} />
+      )}
     </div>
   );
 };
