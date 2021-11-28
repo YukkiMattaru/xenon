@@ -1,17 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import Search from './Search';
-import useSearch from '../hooks/useSearch';
 
-const Header = function () {
-  const { inputProps } = useSearch();
-
+const Header = () => {
   return (
     <StyledHeader>
       <div>
         <h1>XENON</h1>
       </div>
-      <Search {...inputProps} />
+      <StyledSearchContainer>
+        <label htmlFor="search">Поиск</label>
+        <input type="text" name="search" id="search" />
+      </StyledSearchContainer>
       <StyledNav>
         <div>Павел</div>
         <div>Профиль</div>
@@ -30,6 +29,17 @@ const StyledHeader = styled.header`
   align-items: center;
   display: flex;
   justify-content: space-between;
+`;
+
+const StyledSearchContainer = styled.div`
+  display: flex;
+  column-gap: 1em;
+  width: 30%;
+  
+  & input {
+    width: 100%;
+    height: 2em;
+  }
 `;
 
 const StyledNav = styled.nav`
