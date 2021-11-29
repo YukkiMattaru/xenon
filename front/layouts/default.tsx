@@ -1,17 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Provider } from 'react-redux';
 import Header from '../components/Header';
-import store from '../store/store';
 
 const DefaultLayout: React.FC = function ({ children }) {
   return (
     <Wrapper>
-      <Provider store={store}>
-        <Header />
-        <MainContent>{children}</MainContent>
-        <div>Footer</div>
-      </Provider>
+      <Header />
+      <MainContent>{children}</MainContent>
+      <div>Footer</div>
     </Wrapper>
   );
 };

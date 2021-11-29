@@ -1,0 +1,73 @@
+[
+  {
+    "id": 4,
+    "name": "Смартфон Poco X3 6/128GB, серый",
+    "oldPrice": 1614,
+    "price": 1097,
+    "rating": 4,
+    "images": [
+      {
+        "id": 7,
+        "filePath": "https://cdn1.ozone.ru/s3/multimedia-o/wc1200/6019206564.jpg",
+        "fileName": "https://cdn1.ozone.ru/s3/multimedia-o/wc1200/6019206564.jpg"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Батарейки щелочные (алкалиновые) Duracell Ultra, тип AA, 1,5В, 4шт (пальчиковые)",
+    "oldPrice": 720,
+    "price": 269,
+    "rating": 5,
+    "images": [
+      {
+        "id": 1,
+        "filePath": "https://cdn1.ozone.ru/s3/multimedia-7/6015438859.jpg",
+        "fileName": "https://cdn1.ozone.ru/s3/multimedia-7/6015438859.jpg"
+      },
+      {
+        "id": 2,
+        "filePath": "https://cdn1.ozone.ru/s3/multimedia-9/wc50/6006422301.jpg",
+        "fileName": "https://cdn1.ozone.ru/s3/multimedia-9/wc50/6006422301.jpg"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Беспроводной пылесос Dyson V8 Total Clean, темно-серый",
+    "oldPrice": 34990,
+    "price": 27990,
+    "rating": 5,
+    "images": [
+      {
+        "id": 3,
+        "filePath": "https://cdn1.ozone.ru/s3/multimedia-3/6135419403.jpg",
+        "fileName": "https://cdn1.ozone.ru/s3/multimedia-3/6135419403.jpg"
+      },
+      {
+        "id": 4,
+        "filePath": "https://cdn1.ozone.ru/s3/multimedia-7/6135419407.jpg",
+        "fileName": "https://cdn1.ozone.ru/s3/multimedia-7/6135419407.jpg"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Смартфон Poco X3 6/128GB, серый",
+    "oldPrice": 22600,
+    "price": 22600,
+    "rating": 5,
+    "images": [
+      {
+        "id": 5,
+        "filePath": "https://cdn1.ozone.ru/s3/multimedia-a/6149306950.jpg",
+        "fileName": "https://cdn1.ozone.ru/s3/multimedia-a/6149306950.jpg"
+      },
+      {
+        "id": 6,
+        "filePath": "https://cdn1.ozone.ru/s3/multimedia-z/6031976963.jpg",
+        "fileName": "https://cdn1.ozone.ru/s3/multimedia-z/6031976963.jpg"
+      }
+    ]
+  }
+]

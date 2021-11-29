@@ -1,42 +1,55 @@
 import type { NextPage } from 'next';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import styled from 'styled-components';
-import { taxios } from '../lifecycle/services';
+import { useRouter } from 'next/router';
 import ProductCard from '../components/ProductCard';
-import { XenonAPI } from '../types/XenonAPI';
-import useTaxiosRequest from '../hooks/useTaxiosRequest';
-import useSearch from '../hooks/useSearch';
-import { useAppSelector } from '../hooks/redux';
+import { useAppDispatch, useAppSelector } from '../hooks/redux';
+import { fetchProducts } from '../services/ProductService';
+import { layoutFix } from '../lifecycle/helpers';
 
 const Home: NextPage = function () {
-  const [products, setProducts] = useState<XenonAPI.Product[]>();
-  const { sendAjaxRequest } = useTaxiosRequest();
-  const search = useAppSelector((state) => state.searchReducer);
+  const { products, isLoading } = useAppSelector((state) => state.productReducer);
+  const { searchString } = useAppSelector((state) => state.searchReducer);
+  const dispatch = useAppDispatch();
+  const router = useRouter();
 
   useEffect(() => {
-    const getPopularProducts = async () => {
-      const result = await sendAjaxRequest(() => taxios.get('/products/search'));
-      setProducts(result.error ? [] : result.data);
-    };
+    dispatch(fetchProducts());
+  }, [dispatch]);
 
-    getPopularProducts();
-  }, []);
+  const searchProducts = useMemo(() => {
+    if (searchString === '') return products;
+    return products.filter((p) => {
+      return (
+        p.name.toLowerCase().indexOf(searchString.toLowerCase()) > -1 ||
+        p.name.toLowerCase().indexOf(layoutFix(searchString.toLowerCase())) > -1
+      );
+    });
+  }, [searchString, products]);
+
+  if (isLoading) return <StyledContainer>Loading...</StyledContainer>;
 
   return (
     <StyledContainer>
       <SearchResult>
-        Контейнер для того шобы написать что пошел нахуй или я нашел твой товар или популярные товары
+        {searchProducts && !isLoading ? (
+          <p>
+            {searchProducts.length
+              ? `Найдено ${searchProducts.length} товара по вашему запросу`
+              : 'Товаров по запросу не найдено. Попробуйте еще раз'}
+          </p>
+        ) : null}
       </SearchResult>
       <StyledMainContent>
         <FilterSidebar>Сайдбар с фильтрациями когда-нибудь</FilterSidebar>
-        {products ? (
+        {searchProducts ? (
           <ProductCards>
-            {products.map((product) => (
+            {searchProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </ProductCards>
         ) : (
-          <>Loading...</>
+          <>Продукты не найдены.</>
         )}
       </StyledMainContent>
     </StyledContainer>

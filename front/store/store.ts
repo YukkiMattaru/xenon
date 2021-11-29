@@ -1,15 +1,15 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import searchReducer from './reducers/search';
+import productReducer from './reducers/products';
 
 const rootReducer = combineReducers({
   searchReducer,
+  productReducer,
 });
 
 export function setupStore() {
   return configureStore({
-    reducer: {
-      reducer: rootReducer,
-    },
+    reducer: rootReducer,
   });
 }
 

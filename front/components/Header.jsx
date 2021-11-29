@@ -1,17 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import Search from './Search';
-import useSearch from '../hooks/useSearch';
 
 const Header = function () {
-  const { inputProps } = useSearch();
-
   return (
     <StyledHeader>
       <div>
         <h1>XENON</h1>
       </div>
-      <Search {...inputProps} />
+      <Search />
       <StyledNav>
         <div>Павел</div>
         <div>Профиль</div>

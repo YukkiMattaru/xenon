@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import styled from 'styled-components';
-import useSearch from '../hooks/useSearch';
+import { searchSlice } from '../store/reducers/search';
+import { useAppDispatch, useAppSelector } from '../hooks/redux';
 
 const Search: React.FC = function () {
-  const { search, handleChange } = useSearch();
+  const { searchString } = useAppSelector((state) => state.searchReducer);
+  const { setSearch } = searchSlice.actions;
+  const dispatch = useAppDispatch();
 
   return (
     <StyledSearchContainer>
-      <input type="search" placeholder="Найти товары" value={search} onChange={handleChange} />
+      <input
+        type="search"
+        placeholder="Найти товары"
+        value={searchString}
+        onChange={(e) => dispatch(setSearch(e.target.value))}
+      />
     </StyledSearchContainer>
   );
 };
