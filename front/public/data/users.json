@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "login": "serg228",
+    "password": 1234,
+    "main": "serg228@mail.ru",
+    "name": "Сергей",
+    "lastName": "Пупкин",
+    "phoneNumber": "88005553535"
+  },
+  {
+    "id": 2,
+    "login": "Aleksey",
+    "password": 12345,
+    "main": "vladov@mail.ru",
+    "name": "Александр",
+    "lastName": "Владов",
+    "phoneNumber": "88005553535"
+  },
+  {
+    "id": 3,
+    "login": "Pavlov",
+    "password": 1234,
+    "main": "pavlovpavel@mail.ru",
+    "name": "Павел",
+    "lastName": "Павлов",
+    "phoneNumber": "88005553535"
+  }
+]
