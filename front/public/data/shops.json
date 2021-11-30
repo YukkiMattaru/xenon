@@ -1,14 +1,14 @@
 [
     {
         "id": 1,
-        "user_id": 1,
-        "shop_name": "Лавочка у перекрестка",
-        "shop_description": "Закрылась 10 лет назад"
+        "userId": 1,
+        "shopName": "Лавочка у перекрестка",
+        "shopDescription": "Закрылась 10 лет назад"
     },
     {
         "id": 1,
-        "user_id": 3,
-        "shop_name": "Магнит у перекрестка",
-        "shop_description": "Открылся 10 лет назад"
+        "userId": 3,
+        "shopName": "Магнит у перекрестка",
+        "shopDescription": "Открылся 10 лет назад"
     }
 ]

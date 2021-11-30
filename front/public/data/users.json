@@ -5,8 +5,8 @@
     "password": 1234,
     "main": "serg228@mail.ru",
     "name": "Сергей",
-    "last_name": "Пупкин",
-    "phone_number": "88005553535"
+    "lastName": "Пупкин",
+    "phoneNumber": "88005553535"
   },
   {
     "id": 2,
@@ -14,8 +14,8 @@
     "password": 12345,
     "main": "vladov@mail.ru",
     "name": "Александр",
-    "last_name": "Владов",
-    "phone_number": "88005553535"
+    "lastName": "Владов",
+    "phoneNumber": "88005553535"
   },
   {
     "id": 3,
@@ -23,7 +23,7 @@
     "password": 1234,
     "main": "pavlovpavel@mail.ru",
     "name": "Павел",
-    "last_name": "Павлов",
-    "phone_number": "88005553535"
+    "lastName": "Павлов",
+    "phoneNumber": "88005553535"
   }
 ]
