@@ -1,29 +1,29 @@
 [
     {
         "id": 1,
-        "user_id": 1,
-        "product_id": 1,
+        "userId": 1,
+        "productId": 1,
         "description": "Супер",
         "rating": 5
     },
     {
         "id": 2,
-        "user_id": 1,
-        "product_id": 2,
+        "userId": 1,
+        "productId": 2,
         "description": "Не Супер",
         "rating": 5
     },
     {
         "id": 3,
-        "user_id": 1,
-        "product_id": 3,
+        "userId": 1,
+        "productId": 3,
         "description": "Супер Не Супер",
         "rating": 5
     },
     {
         "id": 4,
-        "user_id": 3,
-        "product_id": 1,
+        "userId": 3,
+        "productId": 1,
         "description": "А вот этот Супер",
         "rating": 5
     }
