@@ -1,6 +1,7 @@
 export namespace XenonAPI {
   export interface Product {
     id: string;
+    shopId: string;
     name: string;
     oldPrice: number;
     price: number;
