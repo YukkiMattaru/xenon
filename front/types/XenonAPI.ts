@@ -2,7 +2,7 @@ import internal from "stream";
 
 export namespace XenonAPI {
   export interface Product {
-    id: number;
+    id: string;
     name: string;
     oldPrice: number;
     price: number;
@@ -11,35 +11,35 @@ export namespace XenonAPI {
   }
 
   export interface Image {
-    id: number;
+    id: string;
     filePath: string;
     fileName: string;
   }
 
   export interface Review{
-    id: number;
-    user_id: number;
-    product_id: number;
+    id: string;
+    user_id: string;
+    product_id: string;
     description: string;
     rating: number;
   }
 
   export interface Cart_Item{
-    id: number;
-    user_id: number;
-    product_id: number;
+    id: string;
+    user_id: string;
+    product_id: string;
     amount: number;
   }
 
   export interface Shop{
-    id: number;
-    user_id: number;
+    id: string;
+    user_id: string;
     shop_name: string;
     shop_description: string;
   }
 
-  export interface Product{
-    id: number;
+  export interface User{
+    id: string;
     login: string;
     password: string;
     mail: string;
