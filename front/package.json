@@ -36,7 +36,8 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@simplesmiler/taxios-generate": "^0.1.4",
@@ -48,6 +49,7 @@
     "@types/react-router": "^5.1.8",
     "@types/react-router-dom": "^5.1.5",
     "@types/styled-components": "^5.1.2",
+    "@types/uuid": "^8.3.3",
     "@typescript-eslint/eslint-plugin": "^4.28.1",
     "@typescript-eslint/parser": "^4.28.1",
     "eslint": "^7.29.0",
