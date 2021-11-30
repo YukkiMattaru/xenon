@@ -26,6 +26,8 @@ namespace server
         {
             string connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<DatabaseContext>(options => options.UseNpgsql(connection));
+            
+            services.AddCors();
  
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options => {
@@ -48,10 +50,14 @@ namespace server
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
-            app.UseCors(options => options
-                .AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader());
+
+            app.UseCors(opt => {
+                opt.AllowCredentials();
+                opt.WithOrigins("http://localhost:3000");
+                opt.AllowAnyMethod();
+                opt.AllowAnyHeader();
+            });
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

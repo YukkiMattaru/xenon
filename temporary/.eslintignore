@@ -2,6 +2,3 @@
 /.next
 /node_modules
 /out
-
-# IDE files
-/.idea
