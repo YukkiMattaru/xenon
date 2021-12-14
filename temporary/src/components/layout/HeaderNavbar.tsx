@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Form, FormControl, Nav, Navbar } from 'react-bootstrap';
+import { Navbar, Container, Nav, Form, FormControl, Button } from 'react-bootstrap';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { searchSlice } from '../../store/reducers/search';
 
@@ -18,8 +18,10 @@ const HeaderNavbar: React.FC = () => {
         <Navbar.Brand href="#home">Xenon</Navbar.Brand>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
+            <Nav.Link href="">Home</Nav.Link>
+            <Nav.Link href="shop">Shop</Nav.Link>
+            <Nav.Link href="cart">Cart</Nav.Link>
+            <Nav.Link href="profile">Profile</Nav.Link>
           </Nav>
 
           <Form className="d-flex">
