@@ -35,7 +35,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/ban-types': ['off'],
     '@typescript-eslint/no-namespace': ['off'],
-
+    'object-curly-newline': ['off'],
     'import/extensions': ['off'],
     'react/function-component-definition': ['off'],
     'react/prop-types': ['off'],
@@ -45,6 +45,9 @@ module.exports = {
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['off'],
     'no-param-reassign': ['warn'],
+    'no-shadow': ['off'],
+    'operator-linebreak': ['off'],
+    'import/prefer-default-export': ['warn'],
     'react/jsx-filename-extension': [
       'warn',
       {
