@@ -4,16 +4,28 @@ import { Redirect } from 'react-router-dom';
 import { useAppSelector } from '../../hooks/redux';
 
 const IndexPage: React.FC = () => {
-  const { isAuth } = useAppSelector((state) => state.authReducer);
+  const { isAuth, user } = useAppSelector((state) => state.authReducer);
   const { init } = useAppSelector((state) => state.appReducer);
   const [isEdit, setIsEdit] = useState(false);
-  // if (init && !isAuth) return <Redirect to="/auth" />;
 
-  const [login, setLogin] = useState('Login');
-  const [name, setName] = useState('Name');
-  const [lastName, setLastName] = useState('Last Name');
-  const [phoneNumber, setPhoneNumber] = useState('88005553535');
-  const [email, setEmail] = useState('Email@email.com');
+  const [login, setLogin] = useState(user?.login ?? '');
+  const [name, setName] = useState(user?.name ?? '');
+  const [lastName, setLastName] = useState(user?.lastName ?? '');
+  const [phoneNumber, setPhoneNumber] = useState(user?.phoneNumber ?? '');
+  const [email, setEmail] = useState(user?.mail ?? '');
+
+  if (init && !isAuth) return <Redirect to="/auth" />;
+
+  const toggleIsEdit = () => {
+    if (isEdit) {
+      setLogin(user?.login ?? '');
+      setName(user?.name ?? '');
+      setLastName(user?.lastName ?? '');
+      setPhoneNumber(user?.phoneNumber ?? '');
+      setEmail(user?.mail ?? '');
+    }
+    setIsEdit((edit) => !edit);
+  };
 
   return (
     <Form>
@@ -81,7 +93,7 @@ const IndexPage: React.FC = () => {
           />
         </Col>
       </Form.Group>
-      <Button variant="primary" onClick={() => setIsEdit((edit) => !edit)}>
+      <Button variant="primary" onClick={toggleIsEdit}>
         {isEdit ? 'Отменить' : 'Редактировать'}
       </Button>
       {isEdit && <Button>Принять</Button>}
