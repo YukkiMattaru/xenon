@@ -43,10 +43,9 @@ export const productSlice = createSlice({
     editProduct(state, action: PayloadAction<EditProductPayloadAction>) {
       state.products.forEach((product) => {
         if (product.id === action.payload.id) {
-          const oldPrice =
-            action.payload.price && product.price === action.payload.price
-              ? product.oldPrice
-              : product.price;
+          const oldPrice = action.payload.price && product.price === action.payload.price
+            ? product.oldPrice
+            : product.price;
           product = {
             ...product,
             oldPrice,

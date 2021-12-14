@@ -27,7 +27,6 @@ const ProductPage: React.FC<Props> = (props) => {
     <div>
       {product ? (
         <Container>
-          <></>
           <div />
           <div />
           <div />
