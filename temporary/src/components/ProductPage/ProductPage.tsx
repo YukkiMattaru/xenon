@@ -3,8 +3,8 @@ import { RouteComponentProps } from 'react-router-dom';
 import _ from 'lodash';
 import { Container } from 'react-bootstrap';
 import styled from 'styled-components';
-import { useAppSelector } from '../hooks/redux';
-import { XenonAPI } from '../types/XenonAPI';
+import { useAppSelector } from '../../hooks/redux';
+import { XenonAPI } from '../../types/XenonAPI';
 
 interface MatchParams {
   id: string;

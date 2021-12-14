@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useAppSelector } from '../hooks/redux';
-import Product from './Product';
+import { useAppSelector } from '../../hooks/redux';
+import ProductCard from './ProductCard';
 
-const ProductsPage: React.FC = () => {
+const IndexPage: React.FC = () => {
   const { products } = useAppSelector((state) => state.productReducer);
   return (
     <div>
       {products ? (
         <ProductsContainer>
           {products.map((product) => (
-            <Product product={product} />
+            <ProductCard product={product} />
           ))}
         </ProductsContainer>
       ) : (
@@ -28,4 +28,4 @@ const ProductsContainer = styled.div`
   row-gap: 10px;
 `;
 
-export default ProductsPage;
+export default IndexPage;

@@ -2,13 +2,13 @@ import React from 'react';
 import { Card, Carousel, Image } from 'react-bootstrap';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { XenonAPI } from '../types/XenonAPI';
+import { XenonAPI } from '../../types/XenonAPI';
 
 interface Props {
   product: XenonAPI.Product;
 }
 
-const Product: React.FC<Props> = ({ product }) => {
+const ProductCard: React.FC<Props> = ({ product }) => {
   return (
     <StyledCard>
       <StyledLink to={`/product/${product.id}`}>
@@ -44,4 +44,4 @@ const ProductImage = styled(Image)`
   height: 150px;
 `;
 
-export default Product;
+export default ProductCard;

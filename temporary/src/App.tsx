@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import DefaultLayout from './components/layout/default';
-import ProductsPage from './components/ProductsPage';
+import IndexPage from './components/IndexPage/IndexPage';
 import { useAppDispatch } from './hooks/redux';
 import { initializeApplication } from './services/AppService';
-import ProductPage from './components/ProductPage';
+import ProductPage from './components/ProductPage/ProductPage';
 
 const App = () => {
   const dispatch = useAppDispatch();
@@ -18,7 +18,7 @@ const App = () => {
       <Switch>
         <Route path="/product/:id" component={ProductPage} />
         <Route exact path="/">
-          <ProductsPage />
+          <IndexPage />
         </Route>
       </Switch>
     </DefaultLayout>
