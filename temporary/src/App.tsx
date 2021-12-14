@@ -8,6 +8,7 @@ import ProductPage from './components/ProductPage/ProductPage';
 import ShopPage from './components/ShopPage/ShopPage';
 import CartPage from './components/CartPage/CartPage';
 import ProfilePage from './components/ProfilePage/ProfilePage';
+import AuthPage from './components/AuthPage/AuthPage';
 
 const App = () => {
   const dispatch = useAppDispatch();
@@ -26,6 +27,8 @@ const App = () => {
         <Route exact path="/">
           <IndexPage />
         </Route>
+        <Route path="/auth" component={AuthPage} />
+        <Route exact path="/" component={IndexPage} />
       </Switch>
     </DefaultLayout>
   );

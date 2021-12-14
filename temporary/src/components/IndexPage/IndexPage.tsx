@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Redirect } from 'react-router-dom';
 import { useAppSelector } from '../../hooks/redux';
 import ProductCard from './ProductCard';
 import { layoutFix } from '../../services/helpers';
@@ -7,6 +8,10 @@ import { layoutFix } from '../../services/helpers';
 const IndexPage: React.FC = () => {
   const { products } = useAppSelector((state) => state.productReducer);
   const { searchString } = useAppSelector((state) => state.searchReducer);
+  const { isAuth } = useAppSelector((state) => state.authReducer);
+  const { init } = useAppSelector((state) => state.appReducer);
+
+  if (init && !isAuth) return <Redirect to="/auth" />;
 
   return (
     <div>

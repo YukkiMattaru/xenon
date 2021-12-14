@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import _ from 'lodash';
-import { Carousel, Container, Image } from 'react-bootstrap';
+import { Button, Carousel, Container, Image } from 'react-bootstrap';
 import styled from 'styled-components';
 import { useAppSelector } from '../../hooks/redux';
 import { XenonAPI } from '../../types/XenonAPI';
@@ -19,7 +19,7 @@ const ProductPage: React.FC<Props> = (props) => {
 
   React.useEffect(() => {
     setProduct(_.find(products, (prod) => prod.id === match.params.id));
-  }, []);
+  }, [products]);
 
   return (
     <div>
@@ -35,6 +35,7 @@ const ProductPage: React.FC<Props> = (props) => {
               </Carousel.Item>
             ))}
           </Carousel>
+          <Button>Добавить в корзину</Button>
         </Container>
       ) : null}
     </div>
