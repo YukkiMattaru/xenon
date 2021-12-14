@@ -1,3 +1,5 @@
+import axios, { Axios } from 'axios';
+
 export function layoutFix(str: string) {
   type Replacer = {
     [key: string]: string;
@@ -55,3 +57,7 @@ export function layoutFix(str: string) {
 
   return str;
 }
+
+export const axiosInstance = axios.create({
+  baseURL: 'http://localhost:3000',
+});

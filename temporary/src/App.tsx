@@ -5,6 +5,7 @@ import IndexPage from './components/IndexPage/IndexPage';
 import { useAppDispatch } from './hooks/redux';
 import { initializeApplication } from './services/AppService';
 import ProductPage from './components/ProductPage/ProductPage';
+import AuthPage from './components/AuthPage/AuthPage';
 
 const App = () => {
   const dispatch = useAppDispatch();
@@ -17,9 +18,8 @@ const App = () => {
     <DefaultLayout>
       <Switch>
         <Route path="/product/:id" component={ProductPage} />
-        <Route exact path="/">
-          <IndexPage />
-        </Route>
+        <Route path="/auth" component={AuthPage} />
+        <Route exact path="/" component={IndexPage} />
       </Switch>
     </DefaultLayout>
   );
