@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import _ from 'lodash';
-import { Container } from 'react-bootstrap';
+import { Carousel, Container, Image } from 'react-bootstrap';
 import styled from 'styled-components';
 import { useAppSelector } from '../../hooks/redux';
 import { XenonAPI } from '../../types/XenonAPI';
@@ -15,9 +15,7 @@ type Props = RouteComponentProps<MatchParams>;
 const ProductPage: React.FC<Props> = (props) => {
   const { match } = props;
   const { products } = useAppSelector((state) => state.productReducer);
-  const [product, setProduct] = useState<XenonAPI.Product | undefined>(
-    undefined,
-  );
+  const [product, setProduct] = useState<XenonAPI.Product | undefined>(undefined);
 
   React.useEffect(() => {
     setProduct(_.find(products, (prod) => prod.id === match.params.id));
@@ -27,9 +25,16 @@ const ProductPage: React.FC<Props> = (props) => {
     <div>
       {product ? (
         <Container>
-          <div />
-          <div />
-          <div />
+          <div>{product.name}</div>
+          <div>{product.price}</div>
+          <div>{product.rating}</div>
+          <Carousel>
+            {product.images.map((image) => (
+              <Carousel.Item>
+                <Image src={image.filePath} alt={image.fileName} />
+              </Carousel.Item>
+            ))}
+          </Carousel>
         </Container>
       ) : null}
     </div>

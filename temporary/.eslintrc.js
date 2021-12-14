@@ -35,7 +35,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/ban-types': ['off'],
     '@typescript-eslint/no-namespace': ['off'],
-
+    'operator-linebreak': ['off'],
     'object-curly-newline': ['off'],
     'import/extensions': ['off'],
     'react/function-component-definition': ['off'],

@@ -1,7 +1,17 @@
 import React from 'react';
-import { Navbar, Container, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import { Container, Form, FormControl, Nav, Navbar } from 'react-bootstrap';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux';
+import { searchSlice } from '../../store/reducers/search';
 
 const HeaderNavbar: React.FC = () => {
+  const { searchString } = useAppSelector((state) => state.searchReducer);
+  const dispatch = useAppDispatch();
+  const { setSearch } = searchSlice.actions;
+
+  const handleChangeSearch = (value: string) => {
+    dispatch(setSearch(value));
+  };
+
   return (
     <Navbar bg="light" expand="lg">
       <Container>
@@ -13,8 +23,14 @@ const HeaderNavbar: React.FC = () => {
           </Nav>
 
           <Form className="d-flex">
-            <FormControl type="search" placeholder="Search" className="me-2" aria-label="Search" />
-            <Button variant="outline-success">Search</Button>
+            <FormControl
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+              value={searchString}
+              onChange={(event) => handleChangeSearch(event.target.value)}
+            />
           </Form>
         </Navbar.Collapse>
       </Container>
