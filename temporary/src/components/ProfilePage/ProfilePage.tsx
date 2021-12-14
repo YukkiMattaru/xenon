@@ -1,10 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Col, Form, Row } from 'react-bootstrap';
+import { Redirect } from 'react-router-dom';
 import { useAppSelector } from '../../hooks/redux';
 
 const IndexPage: React.FC = () => {
-  const { products } = useAppSelector((state) => state.productReducer);
+  const { isAuth } = useAppSelector((state) => state.authReducer);
+  const { init } = useAppSelector((state) => state.appReducer);
+
+  if (init && !isAuth) return <Redirect to="/auth" />;
+
   return (
     <Form>
       <Form.Group as={Row} className="mb-3" controlId="formPlainTextLogin">

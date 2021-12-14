@@ -8,10 +8,6 @@ import { layoutFix } from '../../services/helpers';
 const IndexPage: React.FC = () => {
   const { products } = useAppSelector((state) => state.productReducer);
   const { searchString } = useAppSelector((state) => state.searchReducer);
-  const { isAuth } = useAppSelector((state) => state.authReducer);
-  const { init } = useAppSelector((state) => state.appReducer);
-
-  if (init && !isAuth) return <Redirect to="/auth" />;
 
   return (
     <div>

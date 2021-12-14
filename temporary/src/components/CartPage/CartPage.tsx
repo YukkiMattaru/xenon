@@ -1,11 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Button } from 'react-bootstrap';
+import { Redirect } from 'react-router-dom';
 import { useAppSelector } from '../../hooks/redux';
 import ProductCard from '../IndexPage/ProductCard';
 
 const CartPage: React.FC = () => {
+  const { isAuth } = useAppSelector((state) => state.authReducer);
+  const { init } = useAppSelector((state) => state.appReducer);
   const { products } = useAppSelector((state) => state.productReducer);
+
+  if (init && !isAuth) return <Redirect to="/auth" />;
+
   return (
     <div>
       {products ? (
