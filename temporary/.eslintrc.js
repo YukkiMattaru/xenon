@@ -36,6 +36,7 @@ module.exports = {
     '@typescript-eslint/ban-types': ['off'],
     '@typescript-eslint/no-namespace': ['off'],
 
+    'object-curly-newline': ['off'],
     'import/extensions': ['off'],
     'react/function-component-definition': ['off'],
     'react/prop-types': ['off'],
