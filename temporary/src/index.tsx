@@ -6,7 +6,7 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { setupStore } from './store/store';
 
-const store = setupStore();
+export const store = setupStore();
 
 ReactDOM.render(
   <React.StrictMode>

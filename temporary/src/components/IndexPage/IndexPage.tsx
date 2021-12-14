@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Redirect } from 'react-router-dom';
 import { useAppSelector } from '../../hooks/redux';
 import ProductCard from './ProductCard';
 import { layoutFix } from '../../services/helpers';

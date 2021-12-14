@@ -1,16 +1,17 @@
 import _ from 'lodash';
 import { AppDispatch } from '../store/store';
 import { XenonAPI } from '../types/XenonAPI';
-import { useAppSelector } from '../hooks/redux';
 import { authSlice } from '../store/reducers/auth';
 
 type AuthData = Pick<XenonAPI.User, 'login' | 'password'>;
 
-export const authUser = (authData: AuthData) => async (dispatch: AppDispatch) => {
-  const { users } = useAppSelector((state) => state.userReducer);
+export const authUser = (authData: AuthData, users: XenonAPI.User[]) => async (dispatch: AppDispatch) => {
   const authenticatedUser = _.find(
     users,
     (user) => user.login === authData.login && user.password === authData.password,
   );
-  if (authenticatedUser) dispatch(authSlice.actions.auth(authenticatedUser));
+  if (authenticatedUser) {
+    dispatch(authSlice.actions.auth(authenticatedUser));
+    dispatch(authSlice.actions.clearError());
+  } else dispatch(authSlice.actions.setError('Пользователь не найден'));
 };

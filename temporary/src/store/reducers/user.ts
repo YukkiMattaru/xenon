@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSelector, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 import { XenonAPI } from '../../types/XenonAPI';
 
@@ -16,7 +16,7 @@ type AddUserActionPayload = Omit<XenonAPI.User, 'id'>;
 type UserInfoToEdit = Omit<XenonAPI.User, 'id' | 'login' | 'mail'>;
 type EditUserActionPayload = Partial<UserInfoToEdit> & Pick<XenonAPI.User, 'id'>;
 
-const userSlice = createSlice({
+export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
@@ -46,5 +46,9 @@ const userSlice = createSlice({
     },
   },
 });
+
+const selectSelf = (state: UserState) => state;
+
+export const userSelector = createSelector(selectSelf, (state) => state.users);
 
 export default userSlice.reducer;

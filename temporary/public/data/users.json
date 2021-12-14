@@ -2,7 +2,7 @@
   {
     "id": 1,
     "login": "serg228",
-    "password": 1234,
+    "password": "1234",
     "main": "serg228@mail.ru",
     "name": "Сергей",
     "lastName": "Пупкин",
@@ -11,7 +11,7 @@
   {
     "id": 2,
     "login": "Aleksey",
-    "password": 12345,
+    "password": "1234",
     "main": "vladov@mail.ru",
     "name": "Александр",
     "lastName": "Владов",
@@ -20,7 +20,7 @@
   {
     "id": 3,
     "login": "Pavlov",
-    "password": 1234,
+    "password": "1234",
     "main": "pavlovpavel@mail.ru",
     "name": "Павел",
     "lastName": "Павлов",

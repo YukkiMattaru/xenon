@@ -1,10 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Redirect } from 'react-router-dom';
 import { useAppSelector } from '../../hooks/redux';
 import ProductCard from '../IndexPage/ProductCard';
 
 const IndexPage: React.FC = () => {
   const { products } = useAppSelector((state) => state.productReducer);
+  const { isAuth } = useAppSelector((state) => state.authReducer);
+  const { init } = useAppSelector((state) => state.appReducer);
+  if (init && !isAuth) return <Redirect to="/auth" />;
+
   return (
     <div>
       <p>Вот тут будет написано название магазина</p>
