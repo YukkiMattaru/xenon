@@ -36,6 +36,7 @@ module.exports = {
     '@typescript-eslint/ban-types': ['off'],
     '@typescript-eslint/no-namespace': ['off'],
     'operator-linebreak': ['off'],
+    'max-len': ['off'],
     'no-shadow': ['off'],
     'object-curly-newline': ['off'],
     'import/extensions': ['off'],
