@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Button } from 'react-bootstrap';
 import { useAppSelector } from '../../hooks/redux';
-import ProductCard from './ProductCard';
+import ProductCard from '../IndexPage/ProductCard';
 
 const CartPage: React.FC = () => {
   const { products } = useAppSelector((state) => state.productReducer);

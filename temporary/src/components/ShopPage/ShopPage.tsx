@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useAppSelector } from '../../hooks/redux';
-import ProductCard from './ProductCard';
+import ProductCard from '../IndexPage/ProductCard';
 
 const IndexPage: React.FC = () => {
   const { products } = useAppSelector((state) => state.productReducer);
