@@ -11,6 +11,7 @@ export const authUser = (authData: AuthData, users: XenonAPI.User[]) => async (d
     (user) => user.login === authData.login && user.password === authData.password,
   );
   if (authenticatedUser) {
+    localStorage.setItem('auth', JSON.stringify(authenticatedUser));
     dispatch(authSlice.actions.auth(authenticatedUser));
     dispatch(authSlice.actions.clearError());
   } else dispatch(authSlice.actions.setError('Пользователь не найден'));

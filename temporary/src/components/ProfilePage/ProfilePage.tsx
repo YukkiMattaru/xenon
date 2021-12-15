@@ -2,27 +2,39 @@ import React, { useState } from 'react';
 import { Button, Col, Form, Row } from 'react-bootstrap';
 import { Redirect } from 'react-router-dom';
 import { useAppSelector } from '../../hooks/redux';
+import { userSlice } from '../../store/reducers/user';
 
 const IndexPage: React.FC = () => {
   const { isAuth, user } = useAppSelector((state) => state.authReducer);
   const { init } = useAppSelector((state) => state.appReducer);
+  const { editProfile } = userSlice.actions;
   const [isEdit, setIsEdit] = useState(false);
 
-  const [login, setLogin] = useState(user?.login ?? '');
   const [name, setName] = useState(user?.name ?? '');
   const [lastName, setLastName] = useState(user?.lastName ?? '');
   const [phoneNumber, setPhoneNumber] = useState(user?.phoneNumber ?? '');
-  const [email, setEmail] = useState(user?.mail ?? '');
+  const [mail, setMail] = useState(user?.mail ?? '');
+
+  const handleEdit = () => {
+    if (user) {
+      editProfile({
+        name,
+        lastName,
+        mail,
+        phoneNumber,
+        id: user.id,
+      });
+    }
+  };
 
   if (init && !isAuth) return <Redirect to="/auth" />;
 
   const toggleIsEdit = () => {
     if (isEdit) {
-      setLogin(user?.login ?? '');
       setName(user?.name ?? '');
       setLastName(user?.lastName ?? '');
       setPhoneNumber(user?.phoneNumber ?? '');
-      setEmail(user?.mail ?? '');
+      setMail(user?.mail ?? '');
     }
     setIsEdit((edit) => !edit);
   };
@@ -35,10 +47,9 @@ const IndexPage: React.FC = () => {
         </Form.Label>
         <Col sm="10">
           <Form.Control
-            value={login}
-            onChange={(e) => setLogin(e.target.value)}
-            plaintext={!isEdit}
-            readOnly={!isEdit}
+            defaultValue={user?.login ?? ''}
+            disabled
+            plaintext
           />
         </Col>
       </Form.Group>
@@ -48,7 +59,7 @@ const IndexPage: React.FC = () => {
           Имя
         </Form.Label>
         <Col sm="10">
-          <Form.Control value={name} onChange={(e) => setName(e.target.value)} plaintext={!isEdit} readOnly={!isEdit} />
+          <Form.Control value={name} onChange={(e) => setName(e.target.value)} plaintext={!isEdit} disabled={!isEdit} readOnly={!isEdit} />
         </Col>
       </Form.Group>
 
@@ -61,6 +72,7 @@ const IndexPage: React.FC = () => {
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
             plaintext={!isEdit}
+            disabled={!isEdit}
             readOnly={!isEdit}
           />
         </Col>
@@ -75,20 +87,21 @@ const IndexPage: React.FC = () => {
             value={phoneNumber}
             onChange={(e) => setPhoneNumber(e.target.value)}
             plaintext={!isEdit}
+            disabled={!isEdit}
             readOnly={!isEdit}
           />
         </Col>
       </Form.Group>
-
       <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
         <Form.Label column sm="2">
           Email
         </Form.Label>
         <Col sm="10">
           <Form.Control
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={mail}
+            onChange={(e) => setMail(e.target.value)}
             plaintext={!isEdit}
+            disabled={!isEdit}
             readOnly={!isEdit}
           />
         </Col>
@@ -96,7 +109,7 @@ const IndexPage: React.FC = () => {
       <Button variant="primary" onClick={toggleIsEdit}>
         {isEdit ? 'Отменить' : 'Редактировать'}
       </Button>
-      {isEdit && <Button>Принять</Button>}
+      {isEdit && <Button onClick={handleEdit}>Принять</Button>}
       <Button variant="danger">Выйти</Button>
     </Form>
   );

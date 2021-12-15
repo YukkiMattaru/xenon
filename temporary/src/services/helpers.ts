@@ -1,4 +1,4 @@
-import axios, { Axios } from 'axios';
+import axios from 'axios';
 
 export function layoutFix(str: string) {
   type Replacer = {

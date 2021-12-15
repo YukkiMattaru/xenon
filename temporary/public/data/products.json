@@ -1,10 +1,11 @@
 [
   {
     "id": "1",
-    "name": "Смартфон Poco X3 6/128GB, серый",
+    "name": "Чайник, серый",
+    "shopId": "1",
     "oldPrice": 1614,
     "price": 1097,
-    "rating": 4,
+    "rating": 2,
     "images": [
       {
         "id": 7,
@@ -15,10 +16,11 @@
   },
   {
     "id": "2",
+    "shopId": "1",
     "name": "Батарейки щелочные (алкалиновые) Duracell Ultra, тип AA, 1,5В, 4шт (пальчиковые)",
     "oldPrice": 720,
     "price": 269,
-    "rating": 5,
+    "rating": 0,
     "images": [
       {
         "id": 1,
@@ -34,6 +36,7 @@
   },
   {
     "id": "3",
+    "shopId": "1",
     "name": "Беспроводной пылесос Dyson V8 Total Clean, темно-серый",
     "oldPrice": 34990,
     "price": 27990,
@@ -53,6 +56,7 @@
   },
   {
     "id": "4",
+    "shopId": "2",
     "name": "Смартфон Poco X3 6/128GB, серый",
     "oldPrice": 22600,
     "price": 22600,
@@ -72,71 +76,35 @@
   },
   {
     "id": "5",
-    "name": "Смартфон Poco X3 6/128GB, серый",
-    "oldPrice": 1614,
-    "price": 1097,
-    "rating": 4,
+    "name": "Утюг Scarlett SC-SI30K25, 2200Вт, керамическое покрытие KeramoPro",
+    "oldPrice": 1198,
+    "price": 999,
+    "rating": 5,
     "images": [
       {
         "id": 7,
-        "filePath": "https://cdn1.ozone.ru/s3/multimedia-o/wc1200/6019206564.jpg",
-        "fileName": "https://cdn1.ozone.ru/s3/multimedia-o/wc1200/6019206564.jpg"
-      }
-    ]
-  },
-  {
-    "id": "6",
-    "name": "Смартфон Poco X3 6/128GB, серый",
-    "oldPrice": 1614,
-    "price": 1097,
-    "rating": 4,
-    "images": [
+        "filePath": "https://cdn1.ozone.ru/s3/multimedia-7/wc1200/6155812075.jpg",
+        "fileName": "https://cdn1.ozone.ru/s3/multimedia-7/wc1200/6155812075.jpg"
+      },
       {
-        "id": 7,
-        "filePath": "https://cdn1.ozone.ru/s3/multimedia-o/wc1200/6019206564.jpg",
-        "fileName": "https://cdn1.ozone.ru/s3/multimedia-o/wc1200/6019206564.jpg"
-      }
-    ]
-  },
-  {
-    "id": "7",
-    "name": "Смартфон Poco X3 6/128GB, серый",
-    "oldPrice": 1614,
-    "price": 1097,
-    "rating": 4,
-    "images": [
+        "id": 8,
+        "filePath": "https://cdn1.ozone.ru/s3/multimedia-8/wc1200/6155812076.jpg",
+        "fileName": "https://cdn1.ozone.ru/s3/multimedia-8/wc1200/6155812076.jpg"
+      },
       {
-        "id": 7,
-        "filePath": "https://cdn1.ozone.ru/s3/multimedia-o/wc1200/6019206564.jpg",
-        "fileName": "https://cdn1.ozone.ru/s3/multimedia-o/wc1200/6019206564.jpg"
-      }
-    ]
-  },
-  {
-    "id": "8",
-    "name": "Смартфон Poco X3 6/128GB, серый",
-    "oldPrice": 1614,
-    "price": 1097,
-    "rating": 4,
-    "images": [
+        "id": 9,
+        "filePath": "https://cdn1.ozone.ru/s3/multimedia-f/wc1200/6155812083.jpg",
+        "fileName": "https://cdn1.ozone.ru/s3/multimedia-f/wc1200/6155812083.jpg"
+      },
       {
-        "id": 7,
-        "filePath": "https://cdn1.ozone.ru/s3/multimedia-o/wc1200/6019206564.jpg",
-        "fileName": "https://cdn1.ozone.ru/s3/multimedia-o/wc1200/6019206564.jpg"
-      }
-    ]
-  },
-  {
-    "id": "9",
-    "name": "Смартфон Poco X3 6/128GB, серый",
-    "oldPrice": 1614,
-    "price": 1097,
-    "rating": 4,
-    "images": [
+        "id": 10,
+        "filePath": "https://cdn1.ozone.ru/s3/multimedia-g/wc1200/6155812084.jpg",
+        "fileName": "https://cdn1.ozone.ru/s3/multimedia-g/wc1200/6155812084.jpg"
+      },
       {
-        "id": 7,
-        "filePath": "https://cdn1.ozone.ru/s3/multimedia-o/wc1200/6019206564.jpg",
-        "fileName": "https://cdn1.ozone.ru/s3/multimedia-o/wc1200/6019206564.jpg"
+        "id": 11,
+        "filePath": "https://cdn1.ozone.ru/s3/multimedia-o/wc1200/6155812092.jpg",
+        "fileName": "https://cdn1.ozone.ru/s3/multimedia-o/wc1200/6155812092.jpg"
       }
     ]
   }

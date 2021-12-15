@@ -13,7 +13,7 @@ const initialState: ShopState = {
 
 type EditShopPayloadAction = Omit<XenonAPI.Shop, 'userId'>;
 
-const shopSlice = createSlice({
+export const shopSlice = createSlice({
   name: 'shop',
   initialState,
   reducers: {

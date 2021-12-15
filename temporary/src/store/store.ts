@@ -4,6 +4,8 @@ import productReducer from './reducers/products';
 import authReducer from './reducers/auth';
 import userReducer from './reducers/user';
 import appReducer from './reducers/app';
+import cartReducer from './reducers/cartItem';
+import shopReducer from './reducers/shop';
 
 const rootReducer = combineReducers({
   searchReducer,
@@ -11,8 +13,9 @@ const rootReducer = combineReducers({
   authReducer,
   userReducer,
   appReducer,
+  cartReducer,
+  shopReducer,
 });
-
 export function setupStore() {
   return configureStore({
     reducer: rootReducer,

@@ -10,7 +10,8 @@ const AuthPage: React.FC = () => {
   const dispatch = useAppDispatch();
   const { users } = useAppSelector((state) => state.userReducer);
   const { isAuth, error } = useAppSelector((state) => state.authReducer);
-  const authorize = () => {
+  const authorize = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     dispatch(authUser({ login, password }, users));
   };
 
@@ -19,7 +20,7 @@ const AuthPage: React.FC = () => {
   return (
     <Container>
       <p>Войдите в свой профиль</p>
-      <Form>
+      <Form onSubmit={(e) => authorize(e)}>
         <Form.Group className="mb-3" controlId="formBasicLogin">
           <Form.Label>Логин пользователя</Form.Label>
           <Form.Control
@@ -40,7 +41,7 @@ const AuthPage: React.FC = () => {
           />
           {error && <Form.Text>{error}</Form.Text>}
         </Form.Group>
-        <Button variant="primary" onClick={authorize} type="button">
+        <Button variant="primary" type="submit">
           Войти
         </Button>
       </Form>

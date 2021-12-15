@@ -1,6 +1,4 @@
-import axios from 'axios';
 import { AppDispatch } from '../store/store';
-import { productSlice } from '../store/reducers/products';
 import { XenonAPI } from '../types/XenonAPI';
 import { axiosInstance } from './helpers';
 import { userSlice } from '../store/reducers/user';

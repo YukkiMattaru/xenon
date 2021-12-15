@@ -13,7 +13,7 @@ const initialState: UserState = {
 };
 
 type AddUserActionPayload = Omit<XenonAPI.User, 'id'>;
-type UserInfoToEdit = Omit<XenonAPI.User, 'id' | 'login' | 'mail'>;
+type UserInfoToEdit = Omit<XenonAPI.User, 'id' | 'login'>;
 type EditUserActionPayload = Partial<UserInfoToEdit> & Pick<XenonAPI.User, 'id'>;
 
 export const userSlice = createSlice({
@@ -38,8 +38,8 @@ export const userSlice = createSlice({
       state.users.forEach((user) => {
         if (user.id === action.payload.id) {
           user.name = action.payload.name ?? user.name;
+          user.mail = action.payload.mail ?? user.mail;
           user.lastName = action.payload.lastName ?? user.lastName;
-          user.password = action.payload.password ?? user.password;
           user.phoneNumber = action.payload.phoneNumber ?? user.phoneNumber;
         }
       });

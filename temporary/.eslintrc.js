@@ -36,7 +36,6 @@ module.exports = {
     '@typescript-eslint/ban-types': ['off'],
     '@typescript-eslint/no-namespace': ['off'],
     'operator-linebreak': ['off'],
-    'max-len': ['off'],
     'no-shadow': ['off'],
     'object-curly-newline': ['off'],
     'import/extensions': ['off'],
@@ -50,7 +49,9 @@ module.exports = {
     'no-param-reassign': ['off'],
     'max-len': ['off'],
     'no-unused-vars': ['off'],
+    'react/jsx-no-useless-fragment': ['off'],
     'import/prefer-default-export': ['off'],
+    'react/require-default-props': ['off'],
     'react/jsx-filename-extension': [
       'warn',
       {

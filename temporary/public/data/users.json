@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "login": "serg228",
     "password": "1234",
     "main": "serg228@mail.ru",
@@ -9,7 +9,7 @@
     "phoneNumber": "88005553535"
   },
   {
-    "id": 2,
+    "id": "2",
     "login": "Aleksey",
     "password": "1234",
     "main": "vladov@mail.ru",
@@ -18,7 +18,7 @@
     "phoneNumber": "88005553535"
   },
   {
-    "id": 3,
+    "id": "3",
     "login": "Pavlov",
     "password": "1234",
     "main": "pavlovpavel@mail.ru",
