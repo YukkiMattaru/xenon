@@ -12,6 +12,7 @@ import AuthPage from './components/AuthPage/AuthPage';
 
 const App = () => {
   const dispatch = useAppDispatch();
+
   const { isAuth, user } = useAppSelector((state) => state.authReducer);
   useEffect(() => {
     dispatch(initializeApplication(user?.id));
